@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark: #050816;
+}
+
+@layer components {
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 9999px;
+    border: 1px solid rgb(255 255 255 / 0.1);
+    background-color: rgb(255 255 255 / 0.05);
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.75rem;
+    background-color: #2563eb;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+
+  .btn-primary:hover {
+    background-color: #3b82f6;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgb(255 255 255 / 0.1);
+    background-color: rgb(255 255 255 / 0.05);
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+
+  .btn-secondary:hover {
+    background-color: rgb(255 255 255 / 0.1);
+  }
+
+  .glass {
+    border-radius: 1.5rem;
+    border: 1px solid rgb(255 255 255 / 0.1);
+    background-color: rgb(255 255 255 / 0.05);
+    backdrop-filter: blur(4px);
+  }
+
+  .glow-card {
+    position: relative;
+    border-radius: 1.5rem;
+    border: 1px solid rgb(255 255 255 / 0.1);
+    background-color: rgb(255 255 255 / 0.03);
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .glow-card:hover {
+    border-color: rgb(59 130 246 / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(59 130 246 / 0.3) transparent;
+  }
+
+  ::selection {
+    background-color: rgb(59 130 246 / 0.3);
+    color: white;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
