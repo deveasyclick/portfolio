@@ -51,6 +51,15 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             </span>
           </div>
         )}
+        {project.link && (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute inset-0 z-10"
+            aria-label={`Visit ${project.title}`}
+          />
+        )}
         <div className="absolute inset-0 border border-white/10 pointer-events-none" />
       </div>
 
@@ -58,16 +67,6 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       <div className={`flex flex-col flex-1 p-6`}>
         <div className="flex items-start justify-between gap-4">
           <h3 className="text-xl font-bold">{project.title}</h3>
-          {project.link && (
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-zinc-400 hover:text-white transition shrink-0 mt-1"
-            >
-              <ArrowUpRight size={18} />
-            </a>
-          )}
         </div>
 
         <p className="mt-2 text-zinc-400 text-sm leading-relaxed">
@@ -86,8 +85,19 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         {/* Spacer pushes GitHub to bottom */}
         <div className="flex-1" />
 
-        {/* GitHub */}
-        <div className="flex justify-end pt-4">
+        {/* Links */}
+        <div className="flex items-center justify-between pt-4">
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-white bg-white/10 hover:bg-white/20 transition rounded-lg px-3 py-1.5"
+            >
+              <ArrowUpRight size={14} />
+              Live
+            </a>
+          )}
           {project.github && (
             <a
               href={project.github}
@@ -95,7 +105,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               rel="noopener noreferrer"
               className="text-white transition"
             >
-              <Github className="w-6 h-6  fill-white" />
+              <Github className="w-6 h-6 fill-white" />
             </a>
           )}
         </div>
