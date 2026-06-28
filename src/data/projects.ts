@@ -26,7 +26,7 @@ export const projects: Project[] = [
         description:
             'Unified bill payment SDK abstracting multiple providers (Interswitch, VTPass).',
         stack: ['TypeScript', 'Node.js', 'Vitest'],
-        image: '/projects/sdk.png',
+        image: '',
         color: 'bg-green-900/80',
         link: 'https://github.com/deveasyclick/billpay-sdk',
         github: 'https://github.com/deveasyclick/billpay-sdk',

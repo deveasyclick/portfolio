@@ -8,7 +8,7 @@ export interface Project {
   title: string;
   description: string;
   stack: string[];
-  image: string;
+  image?: string;
   color: string;
   link?: string;
   github?: string;

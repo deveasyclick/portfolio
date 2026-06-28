@@ -35,7 +35,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       <div
         className={`relative w-full h-44 rounded-none shrink-0 bg-linear-to-br ${imageGradient}`}
       >
-        {!imgError ? (
+        {project.image && !imgError ? (
           <Image
             src={project.image}
             alt={project.title}
@@ -45,8 +45,19 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             onError={() => setImgError(true)}
           />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-zinc-400 text-sm font-medium">
+          <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+            <svg
+              className="absolute inset-0 w-full h-full"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <pattern id={`grid-${index}`} width="16" height="16" patternUnits="userSpaceOnUse">
+                  <circle cx="8" cy="8" r="1" fill="white" opacity="0.5" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill={`url(#grid-${index})`} />
+            </svg>
+            <span className="relative text-white/60 text-xs font-medium tracking-wider uppercase">
               {project.title}
             </span>
           </div>
