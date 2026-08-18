@@ -2,6 +2,15 @@ import { Project } from '@/types/portfolio';
 
 export const projects: Project[] = [
     {
+        title: 'GitX — AI Git Assistant',
+        description:
+            'AI-powered command-line Git assistant that generates commit messages, pull request descriptions, and changelogs from staged or unstaged changes. Git stays the source of truth, so it never commits, pushes, or modifies code without approval.',
+        stack: ['Go', 'Cobra', 'CLI', 'AI'],
+        image: '',
+        color: 'bg-violet-900/80',
+        github: 'https://github.com/deveasyclick/gitx',
+    },
+    {
         title: 'Iwifunni Notification Platform',
         description:
             'A multi-tenant, API-driven notification platform that lets you send email, SMS, and push notifications through a single REST API, processed asynchronously via a Redis-backed queue.',
