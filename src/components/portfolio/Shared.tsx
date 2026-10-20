@@ -24,20 +24,12 @@ export function Header({ editorial = false }: { editorial?: boolean }) {
       </Link>
       <nav aria-label="Main navigation">
         <a href="#work">Work</a>
-        {!editorial && <a href="#about">About</a>}
-        <a href={editorial ? "#about" : "#experience"}>
-          {editorial ? "About" : "Experience"}
-        </a>
+        <a href="#about">About</a>
         <a href="#contact">
           Contact <Arrow />
         </a>
       </nav>
-      <div className="header-tools">
-        <Link className="design-switch" href={editorial ? "/" : "/editoria"}>
-          {editorial ? "Product view" : "Editorial view"} <Arrow />
-        </Link>
-        <ThemeToggle />
-      </div>
+      <ThemeToggle />
     </header>
   );
 }
@@ -134,5 +126,30 @@ export function MoreProjectsLink() {
     >
       Explore more on GitHub <Arrow />
     </a>
+  );
+}
+
+export function About() {
+  return (
+    <section
+      id="about"
+      className="profile-section shell"
+      aria-labelledby="about-title"
+    >
+      <ProfilePortrait />
+      <div className="profile-copy">
+        <p className="eyebrow">Beyond the code</p>
+        <h2 id="about-title">
+          A little about me<span>.</span>
+        </h2>
+        <p>{profile.about}</p>
+        <p>{profile.aboutDetails}</p>
+        <Tags items={profile.skills} />
+        <p className="profile-education">{profile.education}</p>
+        <a className="text-link" href={profile.resume} download>
+          Read my resume <Arrow />
+        </a>
+      </div>
+    </section>
   );
 }

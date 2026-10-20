@@ -5,10 +5,10 @@ import {
   Contact,
   Arrow,
   Tags,
-  ProfilePortrait,
-  MoreProjectsLink,
+  About,
 } from "@/components/portfolio/Shared";
-import { profile, contributions, independentProjects } from "@/data/content";
+import ProjectCollection from "@/components/portfolio/ProjectCollection";
+import { profile, contributions } from "@/data/content";
 
 export const metadata: Metadata = { title: "Yusuf Adeniyi — Editorial" };
 
@@ -84,64 +84,18 @@ export default function EditorialPortfolio() {
           ))}
         </section>
 
-        <div className="editorial-personal shell">
-          <section id="projects" aria-labelledby="projects-title">
-            <p className="eyebrow">On my own terms</p>
-            <h2 id="projects-title">
-              Independent
-              <br />
-              <em>by design.</em>
-            </h2>
-            {independentProjects.map((project) => (
-              <article className="editorial-project" key={project.name}>
-                <p className="eyebrow">{project.category}</p>
-                <h3>{project.name}</h3>
-                <p>{project.description}</p>
-                <Tags items={project.stack} />
-                <div className="project-links">
-                  {project.website && (
-                    <a href={project.website}>
-                      Visit project <Arrow />
-                    </a>
-                  )}
-                  <a href={project.github}>
-                    View source <Arrow />
-                  </a>
-                </div>
-              </article>
-            ))}
-            <MoreProjectsLink />
-          </section>
-          <section
-            id="about"
-            className="editorial-about"
-            aria-labelledby="about-title"
-          >
-            <p className="eyebrow">A little context</p>
-            <h2 id="about-title">
-              The person
-              <br />
-              <em>behind the work.</em>
-            </h2>
-            <ProfilePortrait />
-            <p>{profile.about}</p>
-            <p>
-              I work across the stack, with a focus on reliable APIs, payment
-              systems, and the infrastructure that keeps products running.
-            </p>
-            <div className="about-note">
-              <p className="eyebrow">Tools of the trade</p>
-              <Tags items={profile.skills} />
-            </div>
-            <div className="about-note">
-              <p className="eyebrow">Education</p>
-              <p>{profile.education}</p>
-            </div>
-            <a className="text-link" href={profile.resume} download>
-              Read the full resume <Arrow />
-            </a>
-          </section>
-        </div>
+        <section
+          id="projects"
+          className="editorial-independent shell"
+          aria-labelledby="projects-title"
+        >
+          <p className="eyebrow">On my own terms</p>
+          <h2 id="projects-title">
+            Independent <em>by design.</em>
+          </h2>
+          <ProjectCollection editorial />
+        </section>
+        <About />
         <Contact editorial />
       </main>
     </div>

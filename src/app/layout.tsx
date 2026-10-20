@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Script from "next/script";
+import ThemeProvider from "@/components/portfolio/ThemeProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yusufadeniyi.dev"),
@@ -12,15 +14,19 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
-        <script
+        <Script
+          id="portfolio-theme"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
-            __html: `(()=>{let t;try{t=localStorage.getItem('portfolio-theme')}catch{}document.documentElement.dataset.theme=t==='dark'||(t!=='light'&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'})()`,
+            __html: `(()=>{let t;try{t=localStorage.getItem('portfolio-theme')}catch{}const theme=t==='dark'||(t!=='light'&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme})()`,
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

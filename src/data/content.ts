@@ -13,7 +13,9 @@ export const profile = {
   editorialIntro:
     "I’m Yusuf Adeniyi, a senior full-stack engineer with 7+ years of experience turning product ideas into dependable production systems.",
   about:
-    "My work spans backend architecture, payments, and end-to-end product ownership. I’ve worked in fast-moving startups, including as Goodkind’s first engineering hire, helping take the product from MVP to acquisition.",
+    "I’m Yusuf Adeniyi, a senior full-stack engineer based in Nigeria. I’ve spent 7+ years building products across payments, commerce, and video, working on both the interfaces people use and the systems behind them.",
+  aboutDetails:
+    "I work with Go, Node.js, TypeScript, and React, with a focus on APIs, payment systems, and background processing. At Goodkind, I was the first engineering hire and helped take the product from MVP to acquisition.",
   education:
     "B.Tech, Computer Science · Federal University of Technology, Akure · 2015–2020",
   skills: [
@@ -188,3 +190,12 @@ export const independentProjects = [
     website: "https://billspay.vercel.app",
   },
 ];
+
+// Keep the curated first row consistent in both designs.
+const featuredNames = ["Feature Flags", "GitX", "BillPay SDK"];
+export const featuredProjects = featuredNames.flatMap((name) =>
+  independentProjects.filter((project) => project.name === name),
+);
+export const moreProjects = independentProjects.filter(
+  (project) => !featuredNames.includes(project.name),
+);

@@ -1,17 +1,6 @@
-import {
-  Header,
-  Contact,
-  Arrow,
-  Tags,
-  ProfilePortrait,
-  MoreProjectsLink,
-} from "@/components/portfolio/Shared";
-import {
-  profile,
-  contributions,
-  independentProjects,
-  career,
-} from "@/data/content";
+import { Header, Contact, Arrow, About } from "@/components/portfolio/Shared";
+import ProjectCollection from "@/components/portfolio/ProjectCollection";
+import { profile, contributions, career } from "@/data/content";
 
 export default function ProductPortfolio() {
   return (
@@ -40,8 +29,7 @@ export default function ProductPortfolio() {
           <div className="hero-footnote">
             <span>Backend depth. Product perspective.</span>
             <span>
-              7+ years building for the real world{" "}
-              <span aria-hidden="true">↘</span>
+              7+ years building for the real world <Arrow down />
             </span>
           </div>
         </section>
@@ -123,58 +111,10 @@ export default function ProductPortfolio() {
               Useful tools, built to be used.
             </p>
           </div>
-          <div className="project-grid">
-            {independentProjects.map((project, index) => (
-              <article className="independent-card" key={project.name}>
-                <div className="project-symbol" aria-hidden="true">
-                  {index === 0 ? (
-                    <>
-                      <span /> <span /> <span />
-                    </>
-                  ) : (
-                    <span className="code-symbol">{`{ / }`}</span>
-                  )}
-                </div>
-                <p className="eyebrow">{project.category}</p>
-                <h3>{project.name}</h3>
-                <p>{project.description}</p>
-                <Tags items={project.stack} />
-                <div className="project-links">
-                  {project.website && (
-                    <a href={project.website}>
-                      Visit project <Arrow />
-                    </a>
-                  )}
-                  <a href={project.github}>
-                    View source <Arrow />
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
-          <MoreProjectsLink />
+          <ProjectCollection />
         </section>
 
-        <section
-          id="about"
-          className="profile-section shell"
-          aria-labelledby="about-title"
-        >
-          <ProfilePortrait />
-          <div className="profile-copy">
-            <p className="eyebrow">A little about me</p>
-            <h2 id="about-title">
-              The person behind
-              <br />
-              the product<span>.</span>
-            </h2>
-            <p>{profile.about}</p>
-            <Tags items={profile.skills} />
-            <a className="text-link" href={profile.resume} download>
-              Read my resume <Arrow />
-            </a>
-          </div>
-        </section>
+        <About />
 
         <section
           id="experience"
