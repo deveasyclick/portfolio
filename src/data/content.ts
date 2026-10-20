@@ -157,7 +157,7 @@ export const independentProjects = [
       "Feature management with environment-specific configuration, user targeting, gradual rollouts, and an audit trail for configuration changes.",
     stack: ["TypeScript", "Next.js", "Hono", "PostgreSQL"],
     github: "https://github.com/deveasyclick/feature-flags",
-    website: null,
+    website: "https://flags.iwifunni.cc",
   },
   {
     name: "Zendo",
