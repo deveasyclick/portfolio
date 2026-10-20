@@ -185,6 +185,6 @@ export const independentProjects = [
       "A full-stack bill payment platform for airtime, data, cable TV, and electricity, with provider routing, background retries, and reconciliation.",
     stack: ["NestJS", "Next.js", "PostgreSQL", "Redis", "BullMQ"],
     github: "https://github.com/deveasyclick/billpay",
-    website: null,
+    website: "https://billspay.vercel.app",
   },
 ];
