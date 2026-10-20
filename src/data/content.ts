@@ -2,7 +2,7 @@
 // independent projects are verified against public GitHub READMEs and metadata.
 export const profile = {
   name: "Yusuf Adeniyi",
-  photo: "/images/yusuf-adeniyi.png",
+  photo: "/images/personal.png",
   role: "Senior Full-Stack Engineer",
   email: "ydeniyi@gmail.com",
   github: "https://github.com/deveasyclick",
