@@ -1,6 +1,8 @@
-// Shared, resume-backed content for both portfolio designs.
+// Shared content for both designs. Career facts come from the resume; additional
+// independent projects are verified against public GitHub READMEs and metadata.
 export const profile = {
   name: "Yusuf Adeniyi",
+  photo: "/images/yusuf-adeniyi.png",
   role: "Senior Full-Stack Engineer",
   email: "ydeniyi@gmail.com",
   github: "https://github.com/deveasyclick",
@@ -133,6 +135,56 @@ export const independentProjects = [
       "A unified TypeScript SDK for Interswitch and VTPass with strict types and retry logic, reducing provider integration complexity.",
     stack: ["TypeScript", "Interswitch", "VTPass"],
     github: "https://github.com/deveasyclick/billpay-sdk",
+    website: null,
+  },
+  {
+    name: "GitX",
+    category: "Independent project",
+    title: "A more thoughtful Git workflow.",
+    description:
+      "An AI-powered command-line Git assistant for generating commit messages, pull request descriptions, and changelogs, with user approval before committing.",
+    stack: ["Go", "CLI", "AI"],
+    github: "https://github.com/deveasyclick/gitx",
+    website: null,
+  },
+  {
+    name: "Feature Flags",
+    category: "Independent project",
+    title: "Release at your own pace.",
+    description:
+      "Feature management with environment-specific configuration, user targeting, gradual rollouts, and an audit trail for configuration changes.",
+    stack: ["TypeScript", "Next.js", "Hono", "PostgreSQL"],
+    github: "https://github.com/deveasyclick/feature-flags",
+    website: null,
+  },
+  {
+    name: "Zendo",
+    category: "Independent project",
+    title: "A closer connection to customers.",
+    description:
+      "A real-time customer support platform with an embeddable chat widget, an agent dashboard, and persistent conversation history.",
+    stack: ["Go", "Next.js", "WebSockets", "PostgreSQL"],
+    github: "https://github.com/deveasyclick/zendo",
+    website: null,
+  },
+  {
+    name: "OpenB2B",
+    category: "Open source",
+    title: "Every order, in order.",
+    description:
+      "A multi-tenant ordering and invoicing platform for small wholesalers, with product management, PDF invoices, and organization-level roles.",
+    stack: ["Go", "Chi", "React", "PostgreSQL"],
+    github: "https://github.com/deveasyclick/openb2b",
+    website: "https://openb2b-web.vercel.app",
+  },
+  {
+    name: "BillPay",
+    category: "Independent project",
+    title: "Everyday bills, one platform.",
+    description:
+      "A full-stack bill payment platform for airtime, data, cable TV, and electricity, with provider routing, background retries, and reconciliation.",
+    stack: ["NestJS", "Next.js", "PostgreSQL", "Redis", "BullMQ"],
+    github: "https://github.com/deveasyclick/billpay",
     website: null,
   },
 ];

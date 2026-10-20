@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import ThemeToggle from "./ThemeToggle";
 import { ArrowUpRight, ArrowDown, Download } from "lucide-react";
 import { profile } from "@/data/content";
 
@@ -22,6 +24,7 @@ export function Header({ editorial = false }: { editorial?: boolean }) {
       </Link>
       <nav aria-label="Main navigation">
         <a href="#work">Work</a>
+        {!editorial && <a href="#about">About</a>}
         <a href={editorial ? "#about" : "#experience"}>
           {editorial ? "About" : "Experience"}
         </a>
@@ -29,9 +32,12 @@ export function Header({ editorial = false }: { editorial?: boolean }) {
           Contact <Arrow />
         </a>
       </nav>
-      <Link className="design-switch" href={editorial ? "/" : "/editoria"}>
-        {editorial ? "Product view" : "Editorial view"} <Arrow />
-      </Link>
+      <div className="header-tools">
+        <Link className="design-switch" href={editorial ? "/" : "/editoria"}>
+          {editorial ? "Product view" : "Editorial view"} <Arrow />
+        </Link>
+        <ThemeToggle />
+      </div>
     </header>
   );
 }
@@ -99,5 +105,34 @@ export function Tags({ items }: { items: string[] }) {
         <li key={item}>{item}</li>
       ))}
     </ul>
+  );
+}
+
+export function ProfilePortrait() {
+  return (
+    <figure className="profile-portrait">
+      <Image
+        src={profile.photo}
+        alt="Portrait of Yusuf Adeniyi"
+        width={460}
+        height={460}
+        sizes="(max-width: 700px) calc(100vw - 40px), 360px"
+      />
+      <figcaption>
+        <span>{profile.name}</span>
+        <span>{profile.role}</span>
+      </figcaption>
+    </figure>
+  );
+}
+
+export function MoreProjectsLink() {
+  return (
+    <a
+      className="text-link more-projects"
+      href={`${profile.github}?tab=repositories`}
+    >
+      Explore more on GitHub <Arrow />
+    </a>
   );
 }

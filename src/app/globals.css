@@ -7,6 +7,15 @@
   --blue: #2855da;
   --line: #dcded5;
   --serif: Georgia, "Times New Roman", serif;
+  --body-copy: #575c57;
+  --card-one: #e9ede7;
+  --card-two: #edeae3;
+  --card-three: #e6ebf2;
+  --card-copy: #535950;
+  --card-line: #727b6f55;
+  --symbol-bg: #e9edff;
+  --accent-line: #2855da55;
+  color-scheme: light;
 }
 * {
   box-sizing: border-box;
@@ -41,6 +50,7 @@ a:hover {
   color: var(--blue);
 }
 a:focus-visible,
+button:focus-visible,
 summary:focus-visible {
   outline: 2px solid var(--blue);
   outline-offset: 6px;
@@ -119,7 +129,7 @@ svg {
   left: 20px;
   padding: 12px 20px;
   background: var(--ink);
-  color: white;
+  color: var(--paper);
   z-index: 10;
   transform: translateY(-160%);
 }
@@ -160,14 +170,14 @@ svg {
   max-width: 540px;
   font-size: 18px;
   line-height: 1.75;
-  color: #575c57;
+  color: var(--body-copy);
 }
 .solid-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 25px;
-  background: var(--blue);
+  background: #2855da;
   color: white;
   padding: 18px 22px;
   font-size: 12px;
@@ -226,16 +236,16 @@ svg {
 .company-card {
   padding: 29px 26px 24px;
   border-radius: 7px;
-  background: #e9ede7;
+  background: var(--card-one);
   display: flex;
   flex-direction: column;
   min-width: 0;
 }
 .company-1 {
-  background: #edeae3;
+  background: var(--card-two);
 }
 .company-2 {
-  background: #e6ebf2;
+  background: var(--card-three);
 }
 .card-top {
   display: flex;
@@ -251,16 +261,16 @@ svg {
 }
 .small-label {
   font-size: 9px;
-  border: 1px solid #727b6f55;
+  border: 1px solid var(--card-line);
   border-radius: 3px;
   padding: 5px 6px;
   white-space: nowrap;
-  color: #535950;
+  color: var(--card-copy);
 }
 .company-card > .eyebrow {
   font-size: 9px;
   letter-spacing: 0.08em;
-  color: #5d655a;
+  color: var(--card-copy);
 }
 .company-card h3 {
   font-size: 30px;
@@ -273,7 +283,7 @@ svg {
 .work-summary {
   font-size: 13px;
   line-height: 1.8;
-  color: #555e54;
+  color: var(--card-copy);
   margin: 12px 0 24px;
 }
 .metric-row {
@@ -297,10 +307,10 @@ svg {
   display: block;
   margin-top: 5px;
   max-width: 110px;
-  color: #5e665d;
+  color: var(--card-copy);
 }
 .company-card details {
-  border-top: 1px solid #777c6b33;
+  border-top: 1px solid var(--card-line);
   font-size: 12px;
 }
 .company-card summary {
@@ -319,13 +329,13 @@ svg {
   margin-top: 10px;
 }
 .card-role {
-  border-top: 1px solid #777c6b33;
+  border-top: 1px solid var(--card-line);
   padding-top: 16px;
   font-size: 10px;
   line-height: 1.8;
 }
 .card-role > span {
-  color: #62675e;
+  color: var(--card-copy);
 }
 .project-grid {
   display: grid;
@@ -337,7 +347,7 @@ svg {
   padding-top: 30px;
 }
 .project-symbol {
-  background: #e9edff;
+  background: var(--symbol-bg);
   width: 58px;
   height: 58px;
   border-radius: 12px;
@@ -422,7 +432,7 @@ svg {
   font-size: 13px;
   color: var(--blue);
   padding-bottom: 5px;
-  border-bottom: 1px solid #2855da55;
+  border-bottom: 1px solid var(--accent-line);
 }
 .career-row {
   border-top: 1px solid var(--line);
@@ -512,7 +522,7 @@ details[open] .expand-icon {
   color: var(--blue);
 }
 .contact-arrow:hover {
-  background: #e6ebfc;
+  background: var(--symbol-bg);
 }
 .contact-arrow svg {
   width: 38px;
@@ -673,7 +683,7 @@ details[open] .expand-icon {
 .story-summary {
   font-size: 14px;
   line-height: 1.9;
-  color: #53564e;
+  color: var(--body-copy);
 }
 .story-achievements {
   font-size: 12px;
@@ -752,7 +762,7 @@ details[open] .expand-icon {
 .editorial-about > p:not(.eyebrow) {
   font-size: 13px;
   line-height: 1.9;
-  color: #53564e;
+  color: var(--body-copy);
 }
 .editorial-about > p + p {
   margin-top: 20px;
@@ -1162,4 +1172,165 @@ details[open] .expand-icon {
 .editorial-mark svg {
   width: 1em;
   height: 1em;
+}
+
+/* Theme tokens keep both visual designs readable in either color scheme. */
+:root[data-theme="dark"] {
+  --paper: #151916;
+  --ink: #edf0e9;
+  --muted: #adb7ac;
+  --blue: #9ab7ff;
+  --line: #3c453d;
+  --body-copy: #bec7bb;
+  --card-one: #242f27;
+  --card-two: #302d27;
+  --card-three: #242c38;
+  --card-copy: #c0cbbf;
+  --card-line: #64726180;
+  --symbol-bg: #283658;
+  --accent-line: #9ab7ff80;
+  color-scheme: dark;
+}
+[data-theme="dark"] .editorial-design {
+  --paper: #1b1b18;
+  --ink: #ede9df;
+  --line: #44443b;
+}
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+}
+.theme-toggle:hover {
+  background: var(--symbol-bg);
+  color: var(--blue);
+}
+.profile-section {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+  align-items: center;
+  gap: 90px;
+  margin-top: 100px;
+  padding-top: 65px;
+  border-top: 1px solid var(--line);
+}
+.profile-portrait {
+  margin: 0;
+  max-width: 360px;
+}
+.profile-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+.profile-portrait figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.7;
+  margin-top: 14px;
+}
+.profile-copy h2 {
+  font-size: clamp(32px, 3.5vw, 47px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.05em;
+  margin: 18px 0 24px;
+}
+.profile-copy h2 span {
+  color: var(--blue);
+}
+.profile-copy > p:not(.eyebrow) {
+  max-width: 530px;
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--body-copy);
+}
+.profile-copy > .text-link {
+  margin-top: 10px;
+}
+.editorial-about .profile-portrait {
+  margin-bottom: 28px;
+}
+.editorial-about .profile-portrait img {
+  border-radius: 0;
+}
+.more-projects {
+  margin-top: 35px;
+}
+@media (max-width: 1000px) {
+  .site-header {
+    gap: 20px;
+  }
+  .site-header nav {
+    gap: 18px;
+  }
+  .header-tools {
+    gap: 12px;
+  }
+  .design-switch {
+    padding-left: 16px;
+  }
+  .profile-section {
+    gap: 45px;
+    grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  .site-header {
+    gap: 0;
+    row-gap: 12px;
+  }
+  .site-header nav {
+    gap: 16px;
+  }
+  .header-tools {
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+  .design-switch {
+    width: auto;
+    padding: 0;
+  }
+  .theme-toggle {
+    min-height: 40px;
+    padding: 8px 11px;
+    font-size: 10px;
+  }
+  .profile-section {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 65px;
+    padding-top: 35px;
+  }
+  .profile-portrait {
+    width: 100%;
+    max-width: 360px;
+  }
+  .profile-copy h2 {
+    font-size: 36px;
+  }
+  .profile-copy > p:not(.eyebrow) {
+    font-size: 14px;
+  }
 }

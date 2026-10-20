@@ -1,4 +1,11 @@
-import { Header, Contact, Arrow, Tags } from "@/components/portfolio/Shared";
+import {
+  Header,
+  Contact,
+  Arrow,
+  Tags,
+  ProfilePortrait,
+  MoreProjectsLink,
+} from "@/components/portfolio/Shared";
 import {
   profile,
   contributions,
@@ -144,6 +151,28 @@ export default function ProductPortfolio() {
                 </div>
               </article>
             ))}
+          </div>
+          <MoreProjectsLink />
+        </section>
+
+        <section
+          id="about"
+          className="profile-section shell"
+          aria-labelledby="about-title"
+        >
+          <ProfilePortrait />
+          <div className="profile-copy">
+            <p className="eyebrow">A little about me</p>
+            <h2 id="about-title">
+              The person behind
+              <br />
+              the product<span>.</span>
+            </h2>
+            <p>{profile.about}</p>
+            <Tags items={profile.skills} />
+            <a className="text-link" href={profile.resume} download>
+              Read my resume <Arrow />
+            </a>
           </div>
         </section>
 

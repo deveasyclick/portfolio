@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { Asterisk } from "lucide-react";
-import { Header, Contact, Arrow, Tags } from "@/components/portfolio/Shared";
+import {
+  Header,
+  Contact,
+  Arrow,
+  Tags,
+  ProfilePortrait,
+  MoreProjectsLink,
+} from "@/components/portfolio/Shared";
 import { profile, contributions, independentProjects } from "@/data/content";
 
 export const metadata: Metadata = { title: "Yusuf Adeniyi — Editorial" };
@@ -103,6 +110,7 @@ export default function EditorialPortfolio() {
                 </div>
               </article>
             ))}
+            <MoreProjectsLink />
           </section>
           <section
             id="about"
@@ -115,6 +123,7 @@ export default function EditorialPortfolio() {
               <br />
               <em>behind the work.</em>
             </h2>
+            <ProfilePortrait />
             <p>{profile.about}</p>
             <p>
               I work across the stack, with a focus on reliable APIs, payment
